@@ -1,0 +1,779 @@
+<title>Portfólio Lino Company</title>
+<meta name="description" content="Perfil no Google, sites, Meta Ads e Google Ads para negócios locais. Veja os serviços, os sites que eu já fiz e os planos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --preto: #0A0A0A;
+    --carvao: #161615;
+    --linha-escura: #2B2926;
+    --creme: #F0E7DC;
+    --creme-fundo: #E9DFD2;
+    --linha-clara: #D3C7B7;
+    --azul: #185BC0;
+    --azul-forte: #124A9E;
+    --azul-claro: #86A9EC;
+    --texto-suave-escuro: #A39A8F;
+    --texto-suave-claro: #5C554C;
+    --sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--preto);
+    color: var(--creme);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--azul-claro); outline-offset: 3px; border-radius: 4px; }
+
+  .wrap { max-width: 1180px; margin-inline: auto; padding-inline: clamp(16px, 4vw, 40px); }
+
+  .display {
+    font-stretch: 125%;
+    font-weight: 800;
+    letter-spacing: -0.012em;
+    line-height: 1.02;
+    text-wrap: balance;
+    margin: 0;
+  }
+  .rotulo {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  /* Botões */
+  .botao {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 22px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: background-color .18s ease, color .18s ease, border-color .18s ease, transform .18s ease;
+  }
+  .botao svg { width: 18px; height: 18px; flex: none; }
+  .botao-azul { background: var(--azul); color: var(--creme); }
+  .botao-azul:hover { background: var(--azul-forte); }
+  .botao-contorno { border-color: var(--linha-escura); color: var(--creme); }
+  .botao-contorno:hover { border-color: var(--creme); }
+  .botao-creme { background: var(--creme); color: var(--azul); }
+  .botao-creme:hover { background: #fff; }
+
+  /* Topo */
+  .topo {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 20;
+    background: rgba(10, 10, 10, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--linha-escura);
+  }
+  .topo .wrap { display: flex; align-items: center; gap: 28px; padding-block: 14px; }
+  .topo-logo img { height: 34px; width: auto; }
+  .topo nav { display: flex; gap: 24px; margin-left: auto; }
+  .topo nav a { text-decoration: none; font-size: 15px; font-weight: 500; color: var(--texto-suave-escuro); }
+  .topo nav a:hover { color: var(--creme); }
+  .topo .botao { padding: 10px 18px; font-size: 15px; }
+
+  /* Abertura */
+  .abertura .wrap {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: clamp(40px, 6vw, 80px);
+    align-items: center;
+    padding-block: clamp(56px, 8vw, 104px);
+  }
+  .abertura .rotulo { color: var(--azul-claro); }
+  .abertura h1 { font-size: clamp(2.15rem, 5.4vw, 4.3rem); margin-top: 20px; }
+  .abertura h1 em { font-style: normal; color: var(--azul-claro); }
+  .abertura .lead { font-size: clamp(1.05rem, 1.6vw, 1.22rem); color: var(--texto-suave-escuro); max-width: 34em; margin: 24px 0 0; }
+  .abertura .lead strong { color: var(--creme); font-weight: 600; }
+  .acoes { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+
+  /* Exemplo do Maps */
+  .mapa {
+    margin: 0;
+    background: var(--creme);
+    color: var(--preto);
+    border-radius: 18px;
+    overflow: hidden;
+    max-width: 440px;
+    width: 100%;
+    justify-self: end;
+    box-shadow: 0 30px 60px -20px rgba(24, 91, 192, 0.35);
+  }
+  .mapa-busca {
+    display: flex; align-items: center; gap: 10px;
+    margin: 14px; padding: 11px 16px;
+    background: #fff; border-radius: 999px;
+    font-size: 15px; color: #3d3a36;
+    box-shadow: 0 1px 3px rgba(0,0,0,.12);
+  }
+  .mapa-busca svg { width: 17px; height: 17px; color: #6b665f; }
+  .mapa-area {
+    position: relative;
+    overflow: hidden;
+    height: 150px;
+    background-color: #E3DACD;
+    background-image:
+      linear-gradient(90deg, transparent 47%, #F5EFE6 47%, #F5EFE6 53%, transparent 53%),
+      linear-gradient(0deg, transparent 46%, #F5EFE6 46%, #F5EFE6 52%, transparent 52%),
+      linear-gradient(90deg, transparent 49%, #EEE6DA 49%, #EEE6DA 51%, transparent 51%),
+      linear-gradient(0deg, transparent 49%, #EEE6DA 49%, #EEE6DA 51%, transparent 51%);
+    background-size: 220px 150px, 220px 150px, 55px 50px, 55px 50px;
+    background-position: 30px 0, 0 10px, 0 0, 0 0;
+  }
+  .mapa-area::after {
+    content: ""; position: absolute; left: -10%; right: -10%; top: 58%;
+    height: 12px; background: #F7E7B8; transform: rotate(-9deg);
+  }
+  .pino { position: absolute; z-index: 1; width: 22px; height: 30px; color: #8C857B; }
+  .pino.seu { width: 34px; height: 46px; color: var(--azul); filter: drop-shadow(0 4px 6px rgba(24,91,192,.35)); }
+  .mapa-lista { list-style: none; margin: 0; padding: 6px 0 4px; }
+  .mapa-lista li { padding: 12px 18px; border-top: 1px solid #DDD3C5; }
+  .mapa-lista li:first-child { border-top: 0; }
+  .mapa-lista strong { display: block; font-size: 16px; font-weight: 700; }
+  .mapa-lista span { font-size: 13.5px; color: #6b665f; }
+  .mapa-lista .apagado strong { color: #77716A; font-weight: 600; }
+  .mapa-lista .seu strong { color: var(--azul); }
+  .mapa-acoes { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .mapa-acoes span {
+    font-size: 12.5px; font-weight: 600; color: var(--azul);
+    border: 1.5px solid #B9C9E8; border-radius: 999px; padding: 4px 11px;
+  }
+  .mapa figcaption {
+    font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase;
+    color: #8C857B; padding: 10px 18px 14px; border-top: 1px solid #DDD3C5;
+  }
+
+  /* Faixas */
+  .faixa { padding-block: clamp(64px, 9vw, 112px); }
+  .faixa-creme { background: var(--creme); color: var(--preto); color-scheme: light; }
+  .faixa-creme .rotulo { color: var(--azul); }
+  .faixa-preta .rotulo { color: var(--azul-claro); }
+  .cabecalho { max-width: 46em; margin-bottom: clamp(36px, 5vw, 56px); }
+  .cabecalho h2 { font-size: clamp(1.85rem, 4vw, 3rem); margin-top: 14px; }
+  .cabecalho p:not(.rotulo) { margin: 16px 0 0; font-size: 1.08rem; }
+  .faixa-creme .cabecalho p:not(.rotulo) { color: var(--texto-suave-claro); }
+  .faixa-preta .cabecalho p:not(.rotulo) { color: var(--texto-suave-escuro); }
+
+  /* Serviços */
+  .servicos { display: grid; }
+  .servico {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 24px clamp(32px, 5vw, 72px);
+    padding-block: 36px;
+    border-top: 1.5px solid var(--preto);
+  }
+  .servico:last-child { border-bottom: 1.5px solid var(--preto); }
+  .servico h3 { font-size: clamp(1.35rem, 2.4vw, 1.8rem); }
+  .servico .para { margin: 12px 0 0; color: var(--texto-suave-claro); max-width: 30em; }
+  .preco { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 10px; margin-top: 20px; }
+  .preco b {
+    font-stretch: 125%; font-weight: 800; font-size: 1.9rem; line-height: 1;
+    font-variant-numeric: tabular-nums; color: var(--azul);
+  }
+  .preco small { font-family: var(--mono); font-size: 13px; color: var(--texto-suave-claro); }
+  .lista { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px 28px; }
+  .lista li { position: relative; padding-left: 22px; font-size: 16px; line-height: 1.45; }
+  .lista li::before {
+    content: ""; position: absolute; left: 0; top: .42em;
+    width: 9px; height: 9px; border-radius: 2px; background: var(--azul);
+  }
+  .fora {
+    grid-column: 2; margin: 0; font-size: 14.5px; color: var(--texto-suave-claro);
+    padding-top: 14px; border-top: 1px dashed var(--linha-clara);
+  }
+  .fora b { color: var(--preto); font-weight: 600; }
+  .nota-verba {
+    margin: 32px 0 0; padding: 18px 22px; border-radius: 12px;
+    background: var(--creme-fundo); font-size: 15.5px; max-width: 52em;
+  }
+  .nota-verba b { font-weight: 700; }
+
+  /* Sites */
+  .projetos { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(56px, 7vw, 88px) clamp(32px, 4vw, 56px); }
+  .projeto { display: grid; gap: 30px; align-content: start; }
+  .projeto-midia { position: relative; display: block; text-decoration: none; padding: 0 34px 34px 0; }
+  .navegador {
+    border-radius: 12px; overflow: hidden;
+    border: 1px solid var(--linha-escura); background: var(--carvao);
+    transition: transform .25s ease;
+  }
+  .projeto-midia:hover .navegador { transform: translateY(-4px); }
+  .barra { display: flex; align-items: center; gap: 6px; height: 30px; padding-inline: 12px; background: #1C1C1B; }
+  .barra i { width: 9px; height: 9px; border-radius: 50%; background: #3A3835; }
+  .barra span {
+    font-family: var(--mono); font-size: 11.5px; color: var(--texto-suave-escuro);
+    margin-left: 10px; padding: 2px 12px; background: #101010; border-radius: 6px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .navegador img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }
+  .celular {
+    position: absolute; right: 0; bottom: 0; width: 27%;
+    aspect-ratio: 9 / 19.4; border-radius: 22px; overflow: hidden;
+    border: 5px solid #202020; background: #202020;
+    box-shadow: 0 24px 40px -12px rgba(0,0,0,.8);
+  }
+  .celular img { width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 16px; }
+  .projeto-texto .rotulo { color: var(--azul-claro); }
+  .projeto-texto h3 { font-size: clamp(1.4rem, 2.4vw, 1.75rem); margin-top: 10px; }
+  .projeto-texto .local { margin: 6px 0 0; font-size: 15px; color: var(--texto-suave-escuro); }
+  .projeto-texto .descricao { margin: 14px 0 0; max-width: 34em; }
+  .link-site {
+    display: inline-flex; align-items: center; gap: 8px; margin-top: 18px;
+    font-weight: 700; color: var(--creme); text-decoration: none;
+    border-bottom: 2px solid var(--azul); padding-bottom: 3px;
+  }
+  .link-site:hover { border-color: var(--creme); }
+  .link-site svg { width: 15px; height: 15px; }
+
+  /* Planos */
+  .pacotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; align-items: stretch; }
+  .pacote {
+    display: flex; flex-direction: column;
+    padding: 30px 28px 28px; border-radius: 16px;
+    background: var(--creme-fundo); border: 1.5px solid var(--linha-clara);
+  }
+  .pacote h3 { font-size: 1.45rem; }
+  .pacote .inclui { margin: 8px 0 0; font-size: 15px; color: var(--texto-suave-claro); min-height: 2.9em; }
+  .pacote .preco { margin-top: 22px; }
+  .pacote .preco b { font-size: 2.3rem; }
+  .ancora { margin: 8px 0 0; font-size: 14px; color: var(--texto-suave-claro); }
+  .ancora s { font-variant-numeric: tabular-nums; }
+  .pacote .lista { grid-template-columns: 1fr; margin-top: 24px; padding-top: 22px; border-top: 1px solid var(--linha-clara); }
+  .pacote .lista li { font-size: 15.5px; }
+  .pacote .botao { margin-top: auto; justify-content: center; }
+  .pacote .lista + .botao { margin-top: 28px; }
+  .pacote-azul { background: var(--azul); border-color: var(--azul); color: var(--creme); }
+  .pacote-azul .inclui, .pacote-azul .ancora, .pacote-azul .preco small { color: #CFDCF5; }
+  .pacote-azul .preco b { color: var(--creme); }
+  .pacote-azul .lista { border-color: rgba(240,231,220,.28); }
+  .pacote-azul .lista li::before { background: var(--creme); }
+  .selo {
+    align-self: flex-start; margin-bottom: 14px;
+    font-family: var(--mono); font-size: 11.5px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase;
+    background: var(--creme); color: var(--azul); padding: 4px 10px; border-radius: 999px;
+  }
+  .pacote:not(.pacote-azul) .selo-vazio { height: 0; }
+
+  .tabela-bloco { margin-top: clamp(48px, 6vw, 72px); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 64px); align-items: start; }
+  .tabela-bloco h3 { font-size: 1.3rem; margin-bottom: 18px; }
+  .tabela-rolagem { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 16px; color: inherit; }
+  th { text-align: left; font-family: var(--mono); font-size: 12px; font-weight: 500; letter-spacing: .07em; text-transform: uppercase; color: var(--texto-suave-claro); padding: 0 12px 10px 0; }
+  td { padding: 14px 12px 14px 0; border-top: 1px solid var(--linha-clara); vertical-align: top; }
+  td.valor { font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  td.cobranca { color: var(--texto-suave-claro); font-size: 15px; white-space: nowrap; }
+  .condicoes { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+  .condicoes li { display: grid; grid-template-columns: 8.5em 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid var(--linha-clara); font-size: 15.5px; }
+  .condicoes .rotulo { color: var(--azul); padding-top: 3px; }
+
+  /* Como começa */
+  .passos { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; counter-reset: passo; }
+  .passos li { counter-increment: passo; padding: 26px 26px 6px 0; border-top: 2px solid var(--linha-escura); position: relative; }
+  .passos li::before {
+    content: "Passo " counter(passo);
+    display: block; font-family: var(--mono); font-size: 12.5px; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--azul-claro); margin-bottom: 14px;
+  }
+  .passos li:first-child { border-top-color: var(--azul); }
+  .passos h3 { font-size: 1.15rem; font-stretch: 112%; font-weight: 750; margin: 0; }
+  .passos p { margin: 10px 0 0; color: var(--texto-suave-escuro); font-size: 15.5px; }
+
+  /* Dúvidas */
+  .duvidas { max-width: 820px; }
+  .duvidas details { border-top: 1.5px solid var(--preto); }
+  .duvidas details:last-child { border-bottom: 1.5px solid var(--preto); }
+  .duvidas summary {
+    list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 20px;
+    padding: 22px 0; font-weight: 700; font-size: 1.1rem;
+  }
+  .duvidas summary::-webkit-details-marker { display: none; }
+  .duvidas summary::after {
+    content: ""; flex: none; width: 14px; height: 14px;
+    background:
+      linear-gradient(var(--azul), var(--azul)) center / 14px 2.5px no-repeat,
+      linear-gradient(var(--azul), var(--azul)) center / 2.5px 14px no-repeat;
+    transition: transform .2s ease;
+  }
+  .duvidas details[open] summary::after { transform: rotate(45deg); }
+  .duvidas details p { margin: 0 0 24px; color: var(--texto-suave-claro); max-width: 40em; }
+
+  /* Contato */
+  .contato { background: var(--azul); color: var(--creme); }
+  .contato .wrap { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: end; padding-block: clamp(64px, 8vw, 104px); }
+  .contato h2 { font-size: clamp(1.9rem, 4.4vw, 3.3rem); }
+  .contato p { margin: 18px 0 0; color: #D8E3F7; font-size: 1.08rem; max-width: 32em; }
+  .contato-dados { display: grid; gap: 14px; justify-items: start; }
+  .numero { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .numero output { font-family: var(--mono); font-size: 1.15rem; font-weight: 500; user-select: all; }
+  .copiar {
+    font: inherit; font-size: 14px; font-weight: 600; cursor: pointer;
+    background: transparent; color: var(--creme); border: 1.5px solid rgba(240,231,220,.5);
+    border-radius: 999px; padding: 6px 14px;
+  }
+  .copiar:hover { border-color: var(--creme); }
+  .insta { font-weight: 600; text-decoration: none; border-bottom: 1.5px solid rgba(240,231,220,.5); }
+  .insta:hover { border-color: var(--creme); }
+
+  /* Rodapé */
+  .rodape .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; padding-block: 32px; }
+  .rodape img { height: 28px; width: auto; }
+  .rodape p { margin: 0; font-size: 14px; color: var(--texto-suave-escuro); }
+
+  /* Responsivo */
+  @media (max-width: 980px) {
+    .abertura .wrap { grid-template-columns: 1fr; }
+    .mapa { justify-self: start; }
+    .servico { grid-template-columns: 1fr; }
+    .fora { grid-column: 1; }
+    .projetos { grid-template-columns: 1fr; }
+    .pacotes { grid-template-columns: 1fr; max-width: 560px; }
+    .pacote .inclui { min-height: 0; }
+    .tabela-bloco { grid-template-columns: 1fr; }
+    .passos { grid-template-columns: 1fr 1fr; row-gap: 12px; }
+    .contato .wrap { grid-template-columns: 1fr; align-items: start; }
+  }
+  @media (max-width: 720px) {
+    .topo nav { display: none; }
+    .topo .botao { margin-left: auto; }
+    .topo-logo img { height: 28px; }
+  }
+  @media (max-width: 560px) {
+    body { font-size: 16px; }
+    .lista { grid-template-columns: 1fr; }
+    .passos { grid-template-columns: 1fr; }
+    .passos li { padding-right: 0; }
+    .projeto-midia { padding: 0 18px 26px 0; }
+    .celular { width: 30%; border-width: 4px; border-radius: 16px; }
+    .celular img { border-radius: 11px; }
+    .condicoes li { grid-template-columns: 1fr; gap: 6px; }
+    .acoes .botao { flex: 1 1 100%; justify-content: center; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition: none !important; }
+  }
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-whats" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5.1 5.1 0 0 0 1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3Z"/></symbol>
+  <symbol id="i-seta" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 11 11 5M6 5h5v5"/></symbol>
+  <symbol id="i-pino" viewBox="0 0 24 32"><path fill="currentColor" d="M12 0C5.4 0 0 5.2 0 11.7 0 20.5 12 32 12 32s12-11.5 12-20.3C24 5.2 18.6 0 12 0Z"/><circle cx="12" cy="11.5" r="4.4" fill="#F0E7DC"/></symbol>
+</svg>
+
+<header class="topo">
+  <div class="wrap">
+    <a class="topo-logo" href="#inicio" aria-label="Lino Company, voltar ao início"><img src="assets/logo-claro.png" alt="Lino Company" width="560" height="179"></a>
+    <nav aria-label="Seções">
+      <a href="#servicos">Serviços</a>
+      <a href="#sites">Sites</a>
+      <a href="#planos">Planos</a>
+      <a href="#duvidas">Dúvidas</a>
+    </nav>
+    <a class="botao botao-azul" href="https://wa.me/5583987954770?text=Ol%C3%A1%2C%20Israel.%20Vi%20o%20portf%C3%B3lio%20da%20Lino%20Company%20e%20quero%20conversar." target="_blank" rel="noopener"><svg><use href="#i-whats"/></svg>WhatsApp</a>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="abertura">
+    <div class="wrap">
+      <div>
+        <p class="rotulo">Perfil no Google · Site · Meta Ads · Google Ads</p>
+        <h1 class="display">Quem procura o seu serviço precisa achar <em>você</em> primeiro.</h1>
+        <p class="lead">Eu monto e cuido da presença do seu negócio na internet: o perfil no Google Maps, o site e os anúncios no Google e no Instagram. <strong>Você fala direto comigo</strong>, da primeira reunião ao relatório do mês.</p>
+        <div class="acoes">
+          <a class="botao botao-azul" href="https://wa.me/5583987954770?text=Ol%C3%A1%2C%20Israel.%20Vi%20o%20portf%C3%B3lio%20da%20Lino%20Company%20e%20quero%20conversar." target="_blank" rel="noopener"><svg><use href="#i-whats"/></svg>Conversar no WhatsApp</a>
+          <a class="botao botao-contorno" href="#sites">Ver sites que eu fiz</a>
+        </div>
+      </div>
+
+      <figure class="mapa" aria-label="Exemplo ilustrativo de uma busca no Google Maps, com a sua empresa em primeiro lugar">
+        <div class="mapa-busca">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+          eletricista perto de mim
+        </div>
+        <div class="mapa-area" aria-hidden="true">
+          <svg class="pino" style="left:18%;top:22%"><use href="#i-pino"/></svg>
+          <svg class="pino" style="left:72%;top:46%"><use href="#i-pino"/></svg>
+          <svg class="pino seu" style="left:44%;top:16%"><use href="#i-pino"/></svg>
+        </div>
+        <ol class="mapa-lista">
+          <li class="seu">
+            <strong>Sua empresa</strong>
+            <span>Aberto agora · 1,2 km</span>
+            <div class="mapa-acoes"><span>Ligar</span><span>Rotas</span><span>Site</span><span>WhatsApp</span></div>
+          </li>
+          <li class="apagado"><strong>Concorrente</strong><span>Fecha às 18h · 2,8 km</span></li>
+          <li class="apagado"><strong>Outro concorrente</strong><span>3,5 km</span></li>
+        </ol>
+        <figcaption>Exemplo ilustrativo de busca no Maps</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="servicos" class="faixa faixa-creme">
+    <div class="wrap">
+      <div class="cabecalho">
+        <p class="rotulo">O que eu faço</p>
+        <h2 class="display">Quatro serviços. Você contrata um ou junta todos.</h2>
+        <p>Cada serviço resolve uma parte do caminho até o cliente chamar você: ser encontrado no Google, ter um site que passa confiança e aparecer em anúncio para quem já está procurando.</p>
+      </div>
+
+      <div class="servicos">
+        <article class="servico">
+          <div>
+            <h3 class="display">Perfil no Google</h3>
+            <p class="para">O Google Meu Negócio. É o cartão que aparece no Google Maps e no mapa da pesquisa quando alguém procura o seu serviço por perto.</p>
+          </div>
+          <ul class="lista">
+            <li>Criação do perfil ou recuperação de um perfil que já existe</li>
+            <li>Categoria, horário, área de atendimento e lista de serviços</li>
+            <li>Publicação das fotos do seu negócio</li>
+            <li>Orientação para pedir e responder avaliações</li>
+            <li>Publicações no perfil</li>
+            <li>Análise de como você e seus concorrentes aparecem no Maps</li>
+          </ul>
+        </article>
+
+        <article class="servico">
+          <div>
+            <h3 class="display">Site</h3>
+            <p class="para">Um site completo, pensado para o celular, que explica o que você faz e leva o visitante direto para o seu WhatsApp.</p>
+          </div>
+          <ul class="lista">
+            <li>Layout para celular, tablet e computador</li>
+            <li>Textos escritos a partir das informações do seu negócio</li>
+            <li>Botão de WhatsApp e formulário de contato</li>
+            <li>SEO básico: títulos, descrições e velocidade</li>
+            <li>Domínio configurado e site publicado</li>
+            <li>Medição de visitas instalada</li>
+            <li>Até 10 rodadas de ajuste antes da aprovação</li>
+          </ul>
+          <p class="fora"><b>Fica por sua conta:</b> domínio e hospedagem, no seu nome. Fotos profissionais e criação de logotipo não estão inclusas.</p>
+        </article>
+
+        <article class="servico">
+          <div>
+            <h3 class="display">Anúncios no Instagram e Facebook</h3>
+            <p class="para">Meta Ads. Seu negócio aparecendo para as pessoas certas da sua região, com cada contato medido.</p>
+          </div>
+          <ul class="lista">
+            <li>Planejamento e estrutura das campanhas</li>
+            <li>Pixel e rastreamento configurados para medir os contatos</li>
+            <li>Criação e adaptação dos anúncios com o seu material</li>
+            <li>Públicos segmentados e personalizados</li>
+            <li>Acompanhamento e ajuste contínuo</li>
+            <li>Relatório mensal com os números e o plano do mês seguinte</li>
+          </ul>
+        </article>
+
+        <article class="servico">
+          <div>
+            <h3 class="display">Anúncios no Google</h3>
+            <p class="para">Google Ads. Você aparece no topo da pesquisa na hora em que a pessoa digita o que precisa.</p>
+          </div>
+          <ul class="lista">
+            <li>Campanhas para quem pesquisa o seu serviço</li>
+            <li>Tag de conversão e rastreamento configurados</li>
+            <li>Palavras-chave escolhidas e palavras negativas para cortar busca errada</li>
+            <li>Anúncios escritos para o seu serviço e a sua região</li>
+            <li>Acompanhamento e ajuste contínuo</li>
+            <li>Relatório mensal com os números e o plano do mês seguinte</li>
+          </ul>
+        </article>
+      </div>
+
+      <p class="nota-verba"><b>Sobre a verba dos anúncios:</b> o dinheiro que vai para o Meta e para o Google é pago por você, direto na plataforma, no seu cartão. O meu valor é só a gestão. Eu indico a verba mínima para o seu caso na reunião.</p>
+    </div>
+  </section>
+
+  <section id="sites" class="faixa faixa-preta">
+    <div class="wrap">
+      <div class="cabecalho">
+        <p class="rotulo">Portfólio</p>
+        <h2 class="display">Sites que eu já fiz</h2>
+        <p>Todos estão no ar. Abra no celular ou no computador e navegue como se fosse um cliente.</p>
+      </div>
+
+      <div class="projetos">
+        <article class="projeto">
+          <a class="projeto-midia" href="https://setefios.com.br/" target="_blank" rel="noopener" aria-label="Abrir o site da 7 Fios Têxtil">
+            <div class="navegador">
+              <div class="barra"><i></i><i></i><i></i><span>setefios.com.br</span></div>
+              <img src="assets/setefios-computador.webp" alt="Página inicial do site da 7 Fios Têxtil no computador" width="1280" height="800" loading="lazy">
+            </div>
+            <div class="celular"><img src="assets/setefios-celular.webp" alt="" width="520" height="1125" loading="lazy"></div>
+          </a>
+          <div class="projeto-texto">
+            <p class="rotulo">Catálogo com orçamento</p>
+            <h3 class="display">7 Fios Têxtil</h3>
+            <p class="local">Loja de tecidos e aviamentos · Santa Cruz do Capibaribe, PE</p>
+            <p class="descricao">Catálogo com busca e filtro por categoria, cor e disponibilidade. O cliente monta o carrinho e envia o orçamento direto para o vendedor pelo WhatsApp.</p>
+            <a class="link-site" href="https://setefios.com.br/" target="_blank" rel="noopener">Abrir o site<svg><use href="#i-seta"/></svg></a>
+          </div>
+        </article>
+
+        <article class="projeto">
+          <a class="projeto-midia" href="https://lm-ar-condicionado.vercel.app/" target="_blank" rel="noopener" aria-label="Abrir o site da LM Ar Condicionado">
+            <div class="navegador">
+              <div class="barra"><i></i><i></i><i></i><span>lm-ar-condicionado.vercel.app</span></div>
+              <img src="assets/lm-computador.webp" alt="Página inicial do site da LM Ar Condicionado no computador" width="1280" height="800" loading="lazy">
+            </div>
+            <div class="celular"><img src="assets/lm-celular.webp" alt="" width="520" height="1125" loading="lazy"></div>
+          </a>
+          <div class="projeto-texto">
+            <p class="rotulo">Serviço local</p>
+            <h3 class="display">LM Ar Condicionado</h3>
+            <p class="local">Instalação e manutenção de ar-condicionado · Saquarema e Araruama, RJ</p>
+            <p class="descricao">Página única para quem precisa do serviço agora: o que a empresa faz, como funciona em quatro passos, a região atendida e o WhatsApp sempre à mão.</p>
+            <a class="link-site" href="https://lm-ar-condicionado.vercel.app/" target="_blank" rel="noopener">Abrir o site<svg><use href="#i-seta"/></svg></a>
+          </div>
+        </article>
+
+        <article class="projeto">
+          <a class="projeto-midia" href="https://seu-estilo-nu.vercel.app/index.html" target="_blank" rel="noopener" aria-label="Abrir o site da Seu Estilo Premium">
+            <div class="navegador">
+              <div class="barra"><i></i><i></i><i></i><span>seu-estilo-nu.vercel.app</span></div>
+              <img src="assets/seuestilo-computador.webp" alt="Página inicial da loja Seu Estilo Premium no computador" width="1280" height="800" loading="lazy">
+            </div>
+            <div class="celular"><img src="assets/seuestilo-celular.webp" alt="" width="520" height="1125" loading="lazy"></div>
+          </a>
+          <div class="projeto-texto">
+            <p class="rotulo">Loja de atacado · protótipo</p>
+            <h3 class="display">Seu Estilo Premium</h3>
+            <p class="local">Moda feminina no atacado · Polo de Confecções, PE</p>
+            <p class="descricao">Loja de atacado com lançamentos, catálogo, pedido mínimo e carrinho que fecha o pedido pelo WhatsApp. Protótipo navegável montado com o catálogo real da loja.</p>
+            <a class="link-site" href="https://seu-estilo-nu.vercel.app/index.html" target="_blank" rel="noopener">Abrir o site<svg><use href="#i-seta"/></svg></a>
+          </div>
+        </article>
+
+        <article class="projeto">
+          <a class="projeto-midia" href="https://www.drthalespizziolo.com.br/" target="_blank" rel="noopener" aria-label="Abrir o site do Dr. Thales Pizziolo">
+            <div class="navegador">
+              <div class="barra"><i></i><i></i><i></i><span>drthalespizziolo.com.br</span></div>
+              <img src="assets/thales-computador.webp" alt="Página inicial do site do Dr. Thales Pizziolo no computador" width="1280" height="800" loading="lazy">
+            </div>
+            <div class="celular"><img src="assets/thales-celular.webp" alt="" width="520" height="1125" loading="lazy"></div>
+          </a>
+          <div class="projeto-texto">
+            <p class="rotulo">Profissional de saúde</p>
+            <h3 class="display">Dr. Thales Pizziolo</h3>
+            <p class="local">Ortopedista de ombro, cotovelo e joelho · Vila Mariana, São Paulo</p>
+            <p class="descricao">Site médico organizado pelas três áreas de atuação, com o registro no CRM visível e o agendamento pelo WhatsApp em todas as seções.</p>
+            <a class="link-site" href="https://www.drthalespizziolo.com.br/" target="_blank" rel="noopener">Abrir o site<svg><use href="#i-seta"/></svg></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="planos" class="faixa faixa-creme">
+    <div class="wrap">
+      <div class="cabecalho">
+        <p class="rotulo">Valores</p>
+        <h2 class="display">Planos e valores</h2>
+        <p>Nos pacotes você paga menos do que contratando cada serviço separado. O plano completo junta tudo com um rastreamento só e um relatório único.</p>
+      </div>
+
+      <div class="pacotes">
+        <article class="pacote">
+          <h3 class="display">Presença</h3>
+          <p class="inclui">Perfil no Google + Site</p>
+          <div class="preco"><b>R$ 800</b></div>
+          <p class="ancora">Separado sairia <s>R$ 1.000</s></p>
+          <ul class="lista">
+            <li>Perfil no Google configurado e otimizado</li>
+            <li>Site publicado, com WhatsApp e formulário</li>
+            <li>Perfil e site apontando um para o outro</li>
+          </ul>
+          <a class="botao botao-azul" href="https://wa.me/5583987954770?text=Ol%C3%A1%2C%20Israel.%20Quero%20saber%20mais%20sobre%20o%20plano%20Presen%C3%A7a." target="_blank" rel="noopener">Quero esse plano</a>
+        </article>
+
+        <article class="pacote">
+          <h3 class="display">Anúncios</h3>
+          <p class="inclui">Meta Ads + Google Ads</p>
+          <div class="preco"><b>R$ 1.200</b></div>
+          <p class="ancora">Separado sairia <s>R$ 1.600</s></p>
+          <ul class="lista">
+            <li>Campanhas no Instagram, Facebook e Google</li>
+            <li>Rastreamento único para as duas plataformas</li>
+            <li>Um relatório mensal com tudo junto</li>
+          </ul>
+          <a class="botao botao-azul" href="https://wa.me/5583987954770?text=Ol%C3%A1%2C%20Israel.%20Quero%20saber%20mais%20sobre%20o%20plano%20An%C3%BAncios." target="_blank" rel="noopener">Quero esse plano</a>
+        </article>
+
+        <article class="pacote pacote-azul">
+          <span class="selo">Mais completo</span>
+          <h3 class="display">Completo</h3>
+          <p class="inclui">Perfil no Google + Site + Meta Ads + Google Ads</p>
+          <div class="preco"><b>R$ 2.000</b></div>
+          <p class="ancora">Tudo o que você precisa para ser encontrado e chamado</p>
+          <ul class="lista">
+            <li>Perfil no Google e site entregues no início</li>
+            <li>Anúncios no Instagram, Facebook e Google</li>
+            <li>Rastreamento de ponta a ponta</li>
+            <li>Um relatório mensal com tudo junto</li>
+          </ul>
+          <a class="botao botao-creme" href="https://wa.me/5583987954770?text=Ol%C3%A1%2C%20Israel.%20Quero%20saber%20mais%20sobre%20o%20plano%20Completo." target="_blank" rel="noopener">Quero esse plano</a>
+        </article>
+      </div>
+
+      <div class="tabela-bloco">
+        <div>
+          <h3 class="display">Serviços avulsos</h3>
+          <div class="tabela-rolagem">
+            <table>
+              <thead><tr><th scope="col">Serviço</th><th scope="col">Valor</th></tr></thead>
+              <tbody>
+                <tr><td>Perfil no Google</td><td class="valor">R$ 500</td></tr>
+                <tr><td>Site</td><td class="valor">R$ 500</td></tr>
+                <tr><td>Anúncios no Instagram e Facebook</td><td class="valor">R$ 800</td></tr>
+                <tr><td>Anúncios no Google</td><td class="valor">R$ 800</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div>
+          <h3 class="display">Como funciona o contrato</h3>
+          <ul class="condicoes">
+            <li><span class="rotulo">Prazo</span><span>Os planos mensais têm contrato de 3 meses.</span></li>
+            <li><span class="rotulo">6 meses</span><span>Fechando 6 meses, a mensalidade fica menor. Eu apresento essa condição na reunião.</span></li>
+            <li><span class="rotulo">Depois</span><span>Terminado o prazo, segue mês a mês. Para encerrar, basta avisar com 30 dias de antecedência, sem multa.</span></li>
+            <li><span class="rotulo">Site</span><span>50% para começar e 50% na entrega, antes de publicar.</span></li>
+            <li><span class="rotulo">Verba</span><span>A verba dos anúncios não entra no valor e é paga direto à plataforma.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faixa faixa-preta">
+    <div class="wrap">
+      <div class="cabecalho">
+        <p class="rotulo">Como começa</p>
+        <h2 class="display">Da conversa ao primeiro relatório</h2>
+      </div>
+      <ol class="passos">
+        <li>
+          <h3>Reunião de diagnóstico</h3>
+          <p>Eu entendo o seu negócio, a sua região e onde você está perdendo cliente hoje.</p>
+        </li>
+        <li>
+          <h3>Acessos e material</h3>
+          <p>Você me passa os acessos e o material, como logo, fotos e informações, em até 5 dias úteis.</p>
+        </li>
+        <li>
+          <h3>Estrutura no ar</h3>
+          <p>Eu monto o perfil, o site, o rastreamento e as campanhas. Nos anúncios, os primeiros 60 dias são de ajuste e coleta de dados.</p>
+        </li>
+        <li>
+          <h3>Relatório todo mês</h3>
+          <p>Você recebe os números do mês e o que eu vou mudar no mês seguinte.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="duvidas" class="faixa faixa-creme">
+    <div class="wrap">
+      <div class="cabecalho">
+        <p class="rotulo">Dúvidas</p>
+        <h2 class="display">Bom saber antes de fechar</h2>
+      </div>
+      <div class="duvidas">
+        <details>
+          <summary>A verba dos anúncios está inclusa no valor?</summary>
+          <p>Não. A verba é paga por você direto ao Meta e ao Google, no seu cartão. O meu valor é só a gestão. Na reunião eu indico quanto investir para o seu caso.</p>
+        </details>
+        <details>
+          <summary>As contas ficam no nome de quem?</summary>
+          <p>No seu. Perfil no Google, contas de anúncio, domínio e site são seus. Se um dia você encerrar o contrato, eu devolvo todos os acessos em até 5 dias úteis.</p>
+        </details>
+        <details>
+          <summary>Você garante uma quantidade de clientes?</summary>
+          <p>Não. O resultado depende também do seu preço, do seu atendimento e do seu mercado. O que eu garanto é estrutura bem feita, cada contato rastreado e um relatório claro todo mês para você ver o que está funcionando.</p>
+        </details>
+        <details>
+          <summary>Preciso ter fotos profissionais?</summary>
+          <p>Não é obrigatório. Eu trabalho com o material que você tiver. A produção de fotos e vídeos não está inclusa nos planos.</p>
+        </details>
+        <details>
+          <summary>Quem vai me atender?</summary>
+          <p>Eu, Israel. Você fala direto comigo, da reunião ao relatório, sem passar por atendente.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="contato" aria-labelledby="contato-titulo">
+    <div class="wrap">
+      <div>
+        <h2 id="contato-titulo" class="display">Vamos ver como o seu negócio aparece hoje?</h2>
+        <p>Me chama no WhatsApp para marcar uma reunião. Nela eu te mostro como o seu negócio aparece no Google e o que dá para melhorar.</p>
+      </div>
+      <div class="contato-dados">
+        <a class="botao botao-creme" href="https://wa.me/5583987954770?text=Ol%C3%A1%2C%20Israel.%20Vi%20o%20portf%C3%B3lio%20da%20Lino%20Company%20e%20quero%20conversar." target="_blank" rel="noopener"><svg><use href="#i-whats"/></svg>Chamar no WhatsApp</a>
+        <div class="numero">
+          <output id="numero-whats">(83) 98795-4770</output>
+          <button class="copiar" id="copiar-numero" type="button">Copiar número</button>
+        </div>
+        <a class="insta" href="https://www.instagram.com/ilinocompany/" target="_blank" rel="noopener">@ilinocompany no Instagram</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="wrap">
+    <img src="assets/logo-claro.png" alt="Lino Company" width="560" height="179">
+    <p>Lino Company · Mamanguape, PB · CNPJ 51.623.751/0001-03</p>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var botao = document.getElementById('copiar-numero');
+    var numero = document.getElementById('numero-whats');
+    botao.addEventListener('click', function () {
+      var texto = numero.textContent.trim();
+      var pronto = function () {
+        botao.textContent = 'Copiado';
+        setTimeout(function () { botao.textContent = 'Copiar número'; }, 2000);
+      };
+      var selecionar = function () {
+        var r = document.createRange();
+        r.selectNodeContents(numero);
+        var s = window.getSelection();
+        s.removeAllRanges();
+        s.addRange(r);
+        botao.textContent = 'Selecionado, use Ctrl+C';
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(texto).then(pronto, selecionar);
+      } else {
+        selecionar();
+      }
+    });
+  })();
+</script>
