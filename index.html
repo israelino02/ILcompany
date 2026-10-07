@@ -1,5 +1,10 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Portfólio Lino Company</title>
-<meta name="description" content="Perfil no Google, sites, Meta Ads e Google Ads para negócios locais. Veja os serviços, os sites que eu já fiz e os planos.">
+<meta name="description" content="Perfil no Google, sites, Meta Ads e Google Ads para negócios locais. Veja os serviços, os sites que já fizemos e os planos.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -348,7 +353,9 @@
     .servico { grid-template-columns: 1fr; }
     .fora { grid-column: 1; }
     .projetos { grid-template-columns: 1fr; }
-    .pacotes { grid-template-columns: 1fr; max-width: 560px; }
+    .pacotes { grid-template-columns: 1fr 1fr; max-width: none; }
+    .pacote-azul { grid-column: 1 / -1; }
+    .pacote-azul .lista { grid-template-columns: 1fr 1fr; column-gap: 32px; }
     .pacote .inclui { min-height: 0; }
     .tabela-bloco { grid-template-columns: 1fr; }
     .passos { grid-template-columns: 1fr 1fr; row-gap: 12px; }
@@ -361,20 +368,36 @@
   }
   @media (max-width: 560px) {
     body { font-size: 16px; }
-    .lista { grid-template-columns: 1fr; }
-    .passos { grid-template-columns: 1fr; }
-    .passos li { padding-right: 0; }
+    .servico .lista { grid-template-columns: 1fr; }
     .projeto-midia { padding: 0 18px 26px 0; }
     .celular { width: 30%; border-width: 4px; border-radius: 16px; }
     .celular img { border-radius: 11px; }
     .condicoes li { grid-template-columns: 1fr; gap: 6px; }
     .acoes .botao { flex: 1 1 100%; justify-content: center; }
+
+    .pacotes { gap: 10px; }
+    .pacote { padding: 20px 14px 18px; }
+    .pacote h3 { font-size: 1.15rem; }
+    .pacote .inclui { font-size: 12.5px; }
+    .pacote .preco { margin-top: 16px; }
+    .pacote .preco b { font-size: 1.5rem; }
+    .ancora { font-size: 11.5px; }
+    .pacote .lista { margin-top: 16px; padding-top: 16px; }
+    .pacote .lista li { font-size: 13px; padding-left: 18px; }
+    .pacote .lista li::before { width: 7px; height: 7px; top: .38em; }
+    .pacote .lista + .botao { margin-top: 18px; }
+    .pacote .botao { padding: 11px 14px; font-size: 13.5px; }
+    .selo { font-size: 10px; padding: 3px 9px; margin-bottom: 10px; }
+    .pacote-azul .lista { grid-template-columns: 1fr 1fr; column-gap: 20px; }
   }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     *, *::before, *::after { transition: none !important; }
   }
 </style>
+</head>
+<body>
+
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-whats" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5.1 5.1 0 0 0 1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3Z"/></symbol>
@@ -401,10 +424,10 @@
       <div>
         <p class="rotulo">Perfil no Google · Site · Meta Ads · Google Ads</p>
         <h1 class="display">Quem procura o seu serviço precisa achar <em>você</em> primeiro.</h1>
-        <p class="lead">Eu monto e cuido da presença do seu negócio na internet: o perfil no Google Maps, o site e os anúncios no Google e no Instagram. <strong>Você fala direto comigo</strong>, da primeira reunião ao relatório do mês.</p>
+        <p class="lead">Montamos e cuidamos da presença do seu negócio na internet: o perfil no Google Maps, o site e os anúncios no Google e no Instagram. <strong>Você fala direto comigo</strong>, da primeira reunião ao relatório do mês.</p>
         <div class="acoes">
           <a class="botao botao-azul" href="https://wa.me/5583987954770?text=Ol%C3%A1%2C%20Israel.%20Vi%20o%20portf%C3%B3lio%20da%20Lino%20Company%20e%20quero%20conversar." target="_blank" rel="noopener"><svg><use href="#i-whats"/></svg>Conversar no WhatsApp</a>
-          <a class="botao botao-contorno" href="#sites">Ver sites que eu fiz</a>
+          <a class="botao botao-contorno" href="#sites">Ver sites que fizemos</a>
         </div>
       </div>
 
@@ -435,7 +458,7 @@
   <section id="servicos" class="faixa faixa-creme">
     <div class="wrap">
       <div class="cabecalho">
-        <p class="rotulo">O que eu faço</p>
+        <p class="rotulo">O que fazemos</p>
         <h2 class="display">Quatro serviços. Você contrata um ou junta todos.</h2>
         <p>Cada serviço resolve uma parte do caminho até o cliente chamar você: ser encontrado no Google, ter um site que passa confiança e aparecer em anúncio para quem já está procurando.</p>
       </div>
@@ -504,7 +527,7 @@
         </article>
       </div>
 
-      <p class="nota-verba"><b>Sobre a verba dos anúncios:</b> o dinheiro que vai para o Meta e para o Google é pago por você, direto na plataforma, no seu cartão. O meu valor é só a gestão. Eu indico a verba mínima para o seu caso na reunião.</p>
+      <p class="nota-verba"><b>Sobre a verba dos anúncios:</b> o dinheiro que vai para o Meta e para o Google é pago por você, direto na plataforma, no seu cartão. O nosso valor é só a gestão. Indicamos a verba mínima para o seu caso na reunião.</p>
     </div>
   </section>
 
@@ -512,7 +535,7 @@
     <div class="wrap">
       <div class="cabecalho">
         <p class="rotulo">Portfólio</p>
-        <h2 class="display">Sites que eu já fiz</h2>
+        <h2 class="display">Sites que já fizemos</h2>
         <p>Todos estão no ar. Abra no celular ou no computador e navegue como se fosse um cliente.</p>
       </div>
 
@@ -658,7 +681,7 @@
           <h3 class="display">Como funciona o contrato</h3>
           <ul class="condicoes">
             <li><span class="rotulo">Prazo</span><span>Os planos mensais têm contrato de 3 meses.</span></li>
-            <li><span class="rotulo">6 meses</span><span>Fechando 6 meses, a mensalidade fica menor. Eu apresento essa condição na reunião.</span></li>
+            <li><span class="rotulo">6 meses</span><span>Fechando 6 meses, a mensalidade fica menor. Apresentamos essa condição na reunião.</span></li>
             <li><span class="rotulo">Depois</span><span>Terminado o prazo, segue mês a mês. Para encerrar, basta avisar com 30 dias de antecedência, sem multa.</span></li>
             <li><span class="rotulo">Site</span><span>50% para começar e 50% na entrega, antes de publicar.</span></li>
             <li><span class="rotulo">Verba</span><span>A verba dos anúncios não entra no valor e é paga direto à plataforma.</span></li>
@@ -677,19 +700,19 @@
       <ol class="passos">
         <li>
           <h3>Reunião de diagnóstico</h3>
-          <p>Eu entendo o seu negócio, a sua região e onde você está perdendo cliente hoje.</p>
+          <p>Entendemos o seu negócio, a sua região e onde você está perdendo cliente hoje.</p>
         </li>
         <li>
           <h3>Acessos e material</h3>
-          <p>Você me passa os acessos e o material, como logo, fotos e informações, em até 5 dias úteis.</p>
+          <p>Você nos passa os acessos e o material, como logo, fotos e informações, em até 5 dias úteis.</p>
         </li>
         <li>
           <h3>Estrutura no ar</h3>
-          <p>Eu monto o perfil, o site, o rastreamento e as campanhas. Nos anúncios, os primeiros 60 dias são de ajuste e coleta de dados.</p>
+          <p>Montamos o perfil, o site, o rastreamento e as campanhas. Nos anúncios, os primeiros 60 dias são de ajuste e coleta de dados.</p>
         </li>
         <li>
           <h3>Relatório todo mês</h3>
-          <p>Você recebe os números do mês e o que eu vou mudar no mês seguinte.</p>
+          <p>Você recebe os números do mês e o que vamos mudar no mês seguinte.</p>
         </li>
       </ol>
     </div>
@@ -704,19 +727,19 @@
       <div class="duvidas">
         <details>
           <summary>A verba dos anúncios está inclusa no valor?</summary>
-          <p>Não. A verba é paga por você direto ao Meta e ao Google, no seu cartão. O meu valor é só a gestão. Na reunião eu indico quanto investir para o seu caso.</p>
+          <p>Não. A verba é paga por você direto ao Meta e ao Google, no seu cartão. O nosso valor é só a gestão. Na reunião indicamos quanto investir para o seu caso.</p>
         </details>
         <details>
           <summary>As contas ficam no nome de quem?</summary>
-          <p>No seu. Perfil no Google, contas de anúncio, domínio e site são seus. Se um dia você encerrar o contrato, eu devolvo todos os acessos em até 5 dias úteis.</p>
+          <p>No seu. Perfil no Google, contas de anúncio, domínio e site são seus. Se um dia você encerrar o contrato, devolvemos todos os acessos em até 5 dias úteis.</p>
         </details>
         <details>
           <summary>Você garante uma quantidade de clientes?</summary>
-          <p>Não. O resultado depende também do seu preço, do seu atendimento e do seu mercado. O que eu garanto é estrutura bem feita, cada contato rastreado e um relatório claro todo mês para você ver o que está funcionando.</p>
+          <p>Não. O resultado depende também do seu preço, do seu atendimento e do seu mercado. O que garantimos é estrutura bem feita, cada contato rastreado e um relatório claro todo mês para você ver o que está funcionando.</p>
         </details>
         <details>
           <summary>Preciso ter fotos profissionais?</summary>
-          <p>Não é obrigatório. Eu trabalho com o material que você tiver. A produção de fotos e vídeos não está inclusa nos planos.</p>
+          <p>Não é obrigatório. Trabalhamos com o material que você tiver. A produção de fotos e vídeos não está inclusa nos planos.</p>
         </details>
         <details>
           <summary>Quem vai me atender?</summary>
@@ -730,7 +753,7 @@
     <div class="wrap">
       <div>
         <h2 id="contato-titulo" class="display">Vamos ver como o seu negócio aparece hoje?</h2>
-        <p>Me chama no WhatsApp para marcar uma reunião. Nela eu te mostro como o seu negócio aparece no Google e o que dá para melhorar.</p>
+        <p>Me chama no WhatsApp para marcar uma reunião. Nela mostramos como o seu negócio aparece no Google e o que dá para melhorar.</p>
       </div>
       <div class="contato-dados">
         <a class="botao botao-creme" href="https://wa.me/5583987954770?text=Ol%C3%A1%2C%20Israel.%20Vi%20o%20portf%C3%B3lio%20da%20Lino%20Company%20e%20quero%20conversar." target="_blank" rel="noopener"><svg><use href="#i-whats"/></svg>Chamar no WhatsApp</a>
@@ -777,3 +800,6 @@
     });
   })();
 </script>
+
+</body>
+</html>
